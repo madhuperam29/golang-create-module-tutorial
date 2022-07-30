@@ -8,12 +8,15 @@ import (
 
 func main() {
 	// Set properties of the predefined Logger, including the log entry prefix and a flag to disable printing  the time, source file, and line number.
-	
+
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
+	//slice of names
+	names := []string{"Madhu", "Manvi", "Maanas"}
+
 	//Request greetings message
-	message, err := greetings.Hello("Madhu")
+	messages, err := greetings.Hellos(names)
 
 	// If an error was returned, print it to the console and
 	// exit the program.
@@ -22,6 +25,6 @@ func main() {
 	}
 	// If no error was returned, print the returned message
 	// to the console.
-	fmt.Println(message)
+	fmt.Println(messages)
 
 }
